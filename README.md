@@ -33,20 +33,6 @@ The server runs headlessly on the Acer. I manage everything over SSH from my Mac
 | **Storage** | Kingston SA400S37240G 240GB SSD (replaced original HDD) |
 | **OS** | Lubuntu (headless) |
 
-**Network diagram**
-
-```
-MacBook (daily driver)
-    └── Tailscale (mesh VPN)
-        └── Acer Aspire (Lubuntu, headless)
-            └── Docker
-                ├── Immich         # photo backup (+ PostgreSQL + Redis)
-                ├── Nextcloud      # file sync
-                ├── Navidrome      # music streaming
-                ├── EmulatorJS     # browser-based game emulation
-                ├── Uptime Kuma    # service monitoring
-                └── Portainer      # container management
-```
 
 ---
 
@@ -70,7 +56,7 @@ MacBook (daily driver)
 
 ## 📊 Service Status
 
-![Uptime Kuma Dashboard](assets/uptime-kuma.png)
+![Uptime Kuma Dashboard](assets/UptimeKuma.png)
 
 ---
 
@@ -117,7 +103,7 @@ Sorting the hardware first meant no mysterious instability once Linux was runnin
 
 ## 📌 Background
 
-Started this in January 2025 after finding the old Acer sitting unused. The goal was to get real hands-on experience with Linux, networking, and self-hosted services — the kind of practical experience that's hard to get from coursework alone. Most of the real learning came from hardware that didn't cooperate and config that didn't work first time.
+Started this in January 2026 after finding the old Acer sitting unused. The goal was to get real hands-on experience with Linux, networking, and self-hosted services — the kind of practical experience that's hard to get from coursework alone. Most of the real learning came from hardware that didn't cooperate and config that didn't work first time.
 
 It's a work in progress. The roadmap below tracks what's next.
 
@@ -142,12 +128,12 @@ It's a work in progress. The roadmap below tracks what's next.
 
 | Date | Update |
 |------|--------|
-| Jan 2025 | Rediscovered the Acer — Windows 10 corrupted, constant BSODs |
-| Jan 2025 | Replaced DC jack, upgraded RAM, swapped HDD for SSD, replaced batteries |
-| Jan 2025 | Installed Ubuntu — worked but too slow, moved to Lubuntu |
-| Jan 2025 | Switched to headless SSH workflow |
-| Early 2025 | Installed Docker + Portainer |
-| Early 2025 | Deployed Immich (+ PostgreSQL + Redis), Nextcloud, Navidrome |
-| Early 2025 | Deployed EmulatorJS and Uptime Kuma |
-| Early 2025 | Set up Tailscale across all devices |
-| Mar 2025 | Added docker-compose files and full documentation to this repo |
+| Jan 2026 | Rediscovered the Acer — Windows 10 corrupted, constant BSODs |
+| Jan 2026 | Replaced DC jack, upgraded RAM, swapped HDD for SSD, replaced batteries |
+| Jan 2026 | Installed Ubuntu — worked but too slow, moved to Lubuntu |
+| Jan 2026 | Switched to headless SSH workflow |
+| Early 2026 | Installed Docker + Portainer |
+| Early 2026 | Deployed Immich (+ PostgreSQL + Redis), Nextcloud, Navidrome |
+| Early 2026 | Deployed EmulatorJS and Uptime Kuma |
+| Early 2026 | Set up Tailscale across all devices |
+| Mar 2026 | Added docker-compose files and full documentation to this repo |
