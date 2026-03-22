@@ -14,7 +14,6 @@ A homelab built on a resurrected 10-year-old Acer Aspire, running self-hosted se
 | **Databases** | PostgreSQL (Immich), Redis/Valkey (Immich caching) |
 | **Monitoring** | Uptime Kuma (service health & alerting) |
 | **Hardware** | Laptop disassembly, DC jack replacement, RAM/SSD upgrade, CMOS battery |
-| **Security** | Secrets via `.env` files, Tailscale private network, no open public ports |
 | **Self-Hosting** | Immich, Nextcloud, Navidrome, EmulatorJS, Uptime Kuma |
 
 ---
@@ -46,8 +45,6 @@ The server runs headlessly on the Acer. I manage everything over SSH from my Mac
 
 **SSD over HDD** — Swapping the original spinning drive for a Kingston SSD made the single biggest performance difference. Boot times and Docker container startup both improved noticeably.
 
-**Secrets via `.env` files** — Passwords and credentials are kept out of compose files using environment variable substitution. `.env` files are excluded from the repo via `.gitignore` — only `.env.example` templates are committed.
-
 **Multi-container stack for Immich** — Immich runs as four containers: the app server, a machine learning service, PostgreSQL for the database, and Valkey (Redis) for caching. Managing this taught me how `depends_on`, `healthcheck`, and shared volumes work across a real multi-service stack.
 
 **Uptime Kuma for monitoring** — Gives me a live view of whether each service is up, with alerting if something goes down. Useful day-to-day and was also how I first noticed the WiFi disconnection issue (see Known Issues).
@@ -62,22 +59,24 @@ The server runs headlessly on the Acer. I manage everything over SSH from my Mac
 
 ## 🐳 Services
 
-All services run in Docker, managed via Portainer. Compose files are in [`docker-compose/`](docker-compose/).
-
+ 
+All services run in Docker, managed via Portainer.
+ 
 ### Storage & Files
-- **[Nextcloud](docker-compose/nextcloud/docker-compose.yml)** — Personal cloud storage and file sync across devices
-- **[Immich](docker-compose/immich/docker-compose.yml)** — Self-hosted photo and video backup with PostgreSQL + Redis
-
+- **Nextcloud** — Personal cloud storage and file sync across devices
+- **Immich** — Self-hosted photo and video backup with PostgreSQL + Redis
+ 
 ### Media
-- **[Navidrome](docker-compose/navidrome/docker-compose.yml)** — Music streaming server with Subsonic-compatible API
-- **[EmulatorJS](docker-compose/emulatorjs/docker-compose.yml)** — Browser-based game emulation
-
+- **Navidrome** — Music streaming server with Subsonic-compatible API
+- **EmulatorJS** — Browser-based game emulation
+ 
 ### Infrastructure
-- **[Uptime Kuma](docker-compose/uptimekuma/docker-compose.yml)** — Service health monitoring and uptime tracking
+- **Uptime Kuma** — Service health monitoring and uptime tracking
 - **Portainer** — Docker container management UI
 - **Tailscale** — Mesh VPN running on all devices for secure private access
-
+ 
 ---
+ 
 
 ## 🔧 Hardware Journey
 
