@@ -1,4 +1,4 @@
-# 🖥️ Homelab v1
+# 🖥️ Linux Homelab Server - Docker, Self-Hosting & Repurposed Hardware
 
 A homelab built on a resurrected 10-year-old Acer Aspire, running self-hosted services over Tailscale. This repo documents the setup, the hardware decisions, and the things I learned along the way.
 
