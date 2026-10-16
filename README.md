@@ -10,7 +10,7 @@ A small collection of hardware, virtual machines and self-hosted services that I
 
 ⸻
 
-👋 About the Project
+## 👋 About the Project
 
 My homelab started with an old Acer Aspire laptop that I brought back to life and turned into a Linux server.
 
@@ -22,7 +22,7 @@ The idea is simple: Build it, run it, break it, fix it, and learn something alon
 
 ⸻
 
-🏗️ Infrastructure at a Glance
+## 🏗️ Infrastructure at a Glance
 
 <table>
   <tr>
@@ -53,23 +53,9 @@ The idea is simple: Build it, run it, break it, fix it, and learn something alon
 
 ⸻
 
-🗺️ How It Fits Together
+ 
 
-flowchart TB
-    H["🖥️ HOMELAB"]
-    H --> D["Dell OptiPlex"]
-    H --> A["Acer Aspire"]
-    D --> P["Proxmox VE"]
-    A --> L["Lubuntu"]
-    P --> U["Ubuntu Server"]
-    P --> W["Windows Server"]
-    P --> W11["Windows 11"]
-    L --> DS["Docker Services"]
-    DS --> S["Self-Hosted Apps"]
-
-⸻
-
-🖥️ Dell OptiPlex
+## 🖥️ Dell OptiPlex
 
 Main Virtualisation Server
 
@@ -88,7 +74,7 @@ Technologies: Proxmox VE · Linux · Windows Server · Virtual Machines · Netwo
 
 ⸻
 
-💻 Acer Aspire
+## 💻 Acer Aspire
 
 The Original Homelab
 
@@ -121,7 +107,7 @@ Under the hood: Docker · Docker Compose · SSH · Tailscale
 
 ⸻
 
-💾 Storage & Media
+## 💾 Storage & Media
 
 Storage
 
@@ -145,7 +131,7 @@ This part of the setup gives me practical experience with storage, filesystem mo
 
 ⸻
 
-🧰 The Toolkit
+## 🧰 The Toolkit
 
 A quick overview of the technologies across my homelab.
 
@@ -162,7 +148,7 @@ Hardware	RAM and SSD upgrades, hardware troubleshooting
 
 ⸻
 
-🔧 What’s Next?
+## 🔧 What’s Next?
 
 The homelab is always evolving. Here’s what I’m looking to work on next:
 
@@ -176,7 +162,7 @@ The homelab is always evolving. Here’s what I’m looking to work on next:
 
 ⸻
 
-📚 Documentation
+## 📚 Documentation
 
 This repository is where I document my setup, the services I run and the things I learn along the way.
 
