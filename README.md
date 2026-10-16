@@ -132,7 +132,7 @@ This part of the setup gives me practical experience with storage, filesystem mo
 
 ⸻
 
-🧰 The Toolkit
+## 🧰 The Toolkit
 
 A quick overview of the technologies across my homelab.
 
@@ -149,7 +149,7 @@ Hardware	RAM and SSD upgrades, hardware troubleshooting
 
 ⸻
 
-🔧 What’s Next?
+## 🔧 What’s Next?
 
 The homelab is always evolving. Here’s what’s on my radar:
 
