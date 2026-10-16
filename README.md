@@ -1,138 +1,119 @@
-# 🖥️ Linux Homelab Server - Docker, Self-Hosting & Repurposed Hardware
+🖥️ My Homelab — Linux, Virtualisation & Self-Hosted Infrastructure
 
-A homelab built on a resurrected 10-year-old Acer Aspire, running self-hosted services over Tailscale. This repo documents the setup, the hardware decisions, and the things I learned along the way.
+My homelab started with an old Acer Aspire laptop that I brought back to life and turned into a Linux server. Since then, I’ve expanded it with additional hardware, a Proxmox virtualisation server, Windows and Linux environments, and more self-hosted services.
 
----
+I use my homelab to experiment with different technologies, get hands-on with infrastructure, and learn by building and troubleshooting things myself. It’s an ongoing project that grows as I introduce new tools, services and ideas.
 
-## 🧰 Skills & Technologies
+🏗️ Infrastructure Overview
 
-| Category | Tools & Concepts |
-|----------|-----------------|
-| **OS & System** | Lubuntu, Linux CLI, systemd, headless server management |
-| **Networking** | Tailscale (mesh VPN), SSH, remote access without port forwarding |
-| **Containers** | Docker, Docker Compose, Portainer, multi-container stacks |
-| **Databases** | PostgreSQL (Immich), Redis/Valkey (Immich caching) |
-| **Monitoring** | Uptime Kuma (service health & alerting) |
-| **Hardware** | Laptop disassembly, DC jack replacement, RAM/SSD upgrade, CMOS battery |
-| **Self-Hosting** | Immich, Nextcloud, Navidrome, EmulatorJS, Uptime Kuma |
+My current setup consists of two main physical machines, each serving a different purpose.
 
----
+Machine	Role	Operating System / Platform
+Dell OptiPlex	Main virtualisation server	Proxmox VE
+Acer Aspire ES1-531-C8DA	Original Linux server and self-hosting	Lubuntu
 
-## 🏗️ Architecture Overview
+🖥️ Dell OptiPlex — Main Proxmox Server
 
-The server runs headlessly on the Acer. I manage everything over SSH from my MacBook. Tailscale connects all devices into a private network so services are reachable from anywhere without exposing anything to the internet.
+The Dell OptiPlex is the main virtualisation host in my homelab. It runs Proxmox VE, allowing me to manage separate virtual machines for Linux, Windows Server and Windows client environments.
 
-**Hardware**
+Virtual machines:
 
-| Component | Detail |
-|-----------|--------|
-| **Host** | Acer Aspire ES1-531-C8DA (~2015) |
-| **CPU** | Intel Celeron N3050 (2-core, up to 2.16GHz) |
-| **RAM** | 8GB (upgraded from 4GB) |
-| **Storage** | Kingston SA400S37240G 240GB SSD (replaced original HDD) |
-| **OS** | Lubuntu (headless) |
+VM	Operating System	Purpose
+Ubuntu Server	Ubuntu Server	Linux administration, Docker, self-hosted services and storage
+Windows Server	Windows Server	Windows infrastructure and server administration practice
+Windows 11	Windows 11	Windows client administration, testing and troubleshooting
 
+I’m using this environment to develop my understanding of virtualisation, operating system administration, networking and how different systems work together.
 
----
+💻 Acer Aspire — Original Linux Server
 
-## 🛠️ Notable Decisions
+The Acer Aspire was where my homelab journey began. I repurposed the laptop, upgraded its hardware and installed Lubuntu to run as a headless Linux server.
 
-**Going headless via SSH** — The Celeron N3050 is too underpowered to run a desktop environment alongside Docker containers. Switching to headless Lubuntu and SSHing in from my MacBook freed up enough resources to keep everything stable.
+I manage it remotely over SSH and use Tailscale to connect to my homelab services and devices.
 
-**Lubuntu over Ubuntu** — Standard Ubuntu with GNOME was too heavy for the hardware. Lubuntu's LXQt desktop is significantly lighter, and since there's no local display anyway, it's the right tradeoff.
+Hardware:
 
-**Tailscale for remote access** — Rather than opening ports on my router, Tailscale gives every device a stable private IP and handles encrypted routing automatically. No public exposure, zero port forwarding config.
+Component	Specification
+Model	Acer Aspire ES1-531-C8DA
+CPU	Intel Celeron N3050
+RAM	8GB
+Storage	Kingston 240GB SSD
+Operating System	Lubuntu
 
-**SSD over HDD** — Swapping the original spinning drive for a Kingston SSD made the single biggest performance difference. Boot times and Docker container startup both improved noticeably.
+Services and tools:
 
-**Multi-container stack for Immich** — Immich runs as four containers: the app server, a machine learning service, PostgreSQL for the database, and Valkey (Redis) for caching. Managing this taught me how `depends_on`, `healthcheck`, and shared volumes work across a real multi-service stack.
+Technology	Purpose
+Docker	Running containerised applications
+Docker Compose	Managing multi-container applications
+Portainer	Container management
+Uptime Kuma	Service availability monitoring
+Tailscale	Secure connectivity between devices
+Immich	Photo and video management
+Nextcloud	Personal cloud storage and file synchronisation
+Navidrome	Self-hosted music streaming
+EmulatorJS	Browser-based game emulation
 
-**Uptime Kuma for monitoring** — Gives me a live view of whether each service is up, with alerting if something goes down. Useful day-to-day and was also how I first noticed the WiFi disconnection issue (see Known Issues).
+This machine remains part of my setup and gives me a practical environment for experimenting with Linux, Docker and self-hosted applications.
 
----
+🧰 Technologies I’m Working With
 
-## 📊 Service Status
+Virtualisation
 
-![Uptime Kuma Dashboard](assets/UptimeKuma.png)
+* Proxmox VE
+* Virtual machine management
 
----
+Operating Systems & Administration
 
-## 🐳 Services
+* Ubuntu Server
+* Lubuntu
+* Windows Server
+* Windows 11
+* SSH and Linux command-line administration
 
- 
-All services run in Docker, managed via Portainer.
- 
-### Storage & Files
-- **Nextcloud** — Personal cloud storage and file sync across devices
-- **Immich** — Self-hosted photo and video backup with PostgreSQL + Redis
- 
-### Media
-- **Navidrome** — Music streaming server with Subsonic-compatible API
-- **EmulatorJS** — Browser-based game emulation
- 
-### Infrastructure
-- **Uptime Kuma** — Service health monitoring and uptime tracking
-- **Portainer** — Docker container management UI
-- **Tailscale** — Mesh VPN running on all devices for secure private access
- 
----
- 
+Containers & Self-Hosting
 
-## 🔧 Hardware Journey
+* Docker
+* Docker Compose
+* Portainer
+* Immich
+* Nextcloud
+* Navidrome
 
-The Acer was pulled out of retirement with a corrupted Windows 10 install and several hardware faults. Before any Linux work, the machine needed:
+Networking & Storage
 
-- **DC jack replaced** — laptop was cutting out whenever the cable was moved
-- **RAM upgraded** — 4GB → 8GB for running Docker containers
-- **HDD → SSD** — Seagate ST1000LM024 swapped for Kingston SA400S37240G
-- **Main battery replaced** — original had significantly degraded
-- **CMOS battery replaced** — was likely losing BIOS settings on power loss
+* Tailscale
+* NFS and network file sharing
+* Virtual networking
+* Remote access and connectivity troubleshooting
 
-Sorting the hardware first meant no mysterious instability once Linux was running.
+Monitoring
 
----
+* Uptime Kuma
+* Service availability monitoring
 
-## ⚠️ Known Issues
+Hardware
 
-| Issue | Status |
-|-------|--------|
-| Acer intermittently drops WiFi connection, causing brief service outages visible in Uptime Kuma | Investigating — suspected power saving on the wireless adapter. Workaround: `systemctl restart NetworkManager` |
+* Hardware troubleshooting
+* RAM and SSD upgrades
+* Repurposing older hardware
 
----
+🔧 What I’m Exploring Next
 
-## 📌 Background
+My homelab is a work in progress, and there are plenty of things I want to build and improve.
 
-Started this in January 2026 after finding the old Acer sitting unused. The goal was to get real hands-on experience with Linux, networking, and self-hosted services — the kind of practical experience that's hard to get from coursework alone. Most of the real learning came from hardware that didn't cooperate and config that didn't work first time.
+Some of the areas I’m exploring include:
 
-It's a work in progress. The roadmap below tracks what's next.
+* Expanding my Windows Server lab and learning more about Windows infrastructure.
+* Improving my Linux server administration skills.
+* Practising backup and recovery procedures.
+* Learning more about networking, storage and virtualisation.
+* Exploring automation and repeatable infrastructure deployments.
+* Improving monitoring and troubleshooting across my services.
 
----
+📚 Documentation
 
-## 🗺️ Roadmap
+This repository is where I document my homelab setup, the tools I’m using, and the things I learn along the way.
 
-**Up next**
-- [ ] Fix WiFi disconnection issue — investigate `iwconfig` power management settings
-- [ ] Reverse proxy (Caddy or Nginx Proxy Manager) for clean HTTPS access to services
-- [ ] Proper backup strategy — offsite or at minimum a second drive
-- [ ] Local DNS for reaching services by name instead of IP:port
+As the environment grows, I’ll continue adding documentation, configuration examples and troubleshooting notes to make it easier to understand how everything fits together.
 
-**Exploring**
-- [ ] Automated container updates (Watchtower or similar)
-- [ ] Upgrade host hardware — a used mini PC would remove the CPU bottleneck
-- [ ] Ansible for reproducible server configuration
-
----
-
-## 📋 Changelog
-
-| Date | Update |
-|------|--------|
-| Jan 2026 | Rediscovered the Acer — Windows 10 corrupted, constant BSODs |
-| Jan 2026 | Replaced DC jack, upgraded RAM, swapped HDD for SSD, replaced batteries |
-| Jan 2026 | Installed Ubuntu — worked but too slow, moved to Lubuntu |
-| Jan 2026 | Switched to headless SSH workflow |
-| Early 2026 | Installed Docker + Portainer |
-| Early 2026 | Deployed Immich (+ PostgreSQL + Redis), Nextcloud, Navidrome |
-| Early 2026 | Deployed EmulatorJS and Uptime Kuma |
-| Early 2026 | Set up Tailscale across all devices |
-| Mar 2026 | Added docker-compose files and full documentation to this repo |
+It’s very much a work in progress, and that’s part of the point.
