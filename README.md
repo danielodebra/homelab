@@ -1,6 +1,6 @@
 <div align="center">
 
-#🖥️ My Homelab
+# 🖥️ My Homelab
 
 Linux • Virtualisation • Self-Hosting • Infrastructure
 
