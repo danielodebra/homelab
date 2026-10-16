@@ -4,7 +4,7 @@ My homelab started with an old Acer Aspire laptop that I brought back to life an
 
 I use my homelab to experiment with different technologies, get hands-on with infrastructure, and learn by building and troubleshooting things myself. It’s an ongoing project that grows as I introduce new tools, services and ideas.
 
-🏗️ Infrastructure Overview
+## 🏗️ Infrastructure Overview
 
 My current setup consists of two main physical machines, each serving a different purpose.
 
@@ -12,7 +12,7 @@ Machine	Role	Operating System / Platform
 Dell OptiPlex	Main virtualisation server	Proxmox VE
 Acer Aspire ES1-531-C8DA	Original Linux server and self-hosting	Lubuntu
 
-🖥️ Dell OptiPlex — Main Proxmox Server
+## 🖥️ Dell OptiPlex — Main Proxmox Server
 
 The Dell OptiPlex is the main virtualisation host in my homelab. It runs Proxmox VE, allowing me to manage separate virtual machines for Linux, Windows Server and Windows client environments.
 
@@ -25,7 +25,7 @@ Windows 11	Windows 11	Windows client administration, testing and troubleshooting
 
 I’m using this environment to develop my understanding of virtualisation, operating system administration, networking and how different systems work together.
 
-💻 Acer Aspire — Original Linux Server
+## 💻 Acer Aspire — Original Linux Server
 
 The Acer Aspire was where my homelab journey began. I repurposed the laptop, upgraded its hardware and installed Lubuntu to run as a headless Linux server.
 
@@ -55,7 +55,7 @@ EmulatorJS	Browser-based game emulation
 
 This machine remains part of my setup and gives me a practical environment for experimenting with Linux, Docker and self-hosted applications.
 
-🧰 Technologies I’m Working With
+## 🧰 Technologies I’m Working With
 
 Virtualisation
 
@@ -97,7 +97,7 @@ Hardware
 * RAM and SSD upgrades
 * Repurposing older hardware
 
-🔧 What I’m Exploring Next
+## 🔧 What I’m Exploring Next
 
 My homelab is a work in progress, and there are plenty of things I want to build and improve.
 
@@ -110,7 +110,7 @@ Some of the areas I’m exploring include:
 * Exploring automation and repeatable infrastructure deployments.
 * Improving monitoring and troubleshooting across my services.
 
-📚 Documentation
+## 📚 Documentation
 
 This repository is where I document my homelab setup, the tools I’m using, and the things I learn along the way.
 
