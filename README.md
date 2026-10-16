@@ -1,4 +1,4 @@
-🖥️ My Homelab — Linux, Virtualisation & Self-Hosted Infrastructure
+## 🖥️ My Homelab — Linux, Virtualisation & Self-Hosted Infrastructure
 
 My homelab started with an old Acer Aspire laptop that I brought back to life and turned into a Linux server. Since then, I’ve expanded it with additional hardware, a Proxmox virtualisation server, Windows and Linux environments, and more self-hosted services.
 
