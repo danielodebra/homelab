@@ -1,6 +1,6 @@
 <div align="center">
 
-🖥️ My Homelab
+# 🖥️ My Homelab
 
 Linux · Virtualisation · Self-Hosting · Infrastructure
 
@@ -24,13 +24,32 @@ The idea is simple: Build it, run it, break it, fix it, and learn something alon
 
 🏗️ Infrastructure at a Glance
 
-🖥️ Dell OptiPlex	💻 Acer Aspire
-Main virtualisation server	Original Linux server
-⚙️ Proxmox VE	🐧 Lubuntu
-🐧 Ubuntu Server VM	🐳 Docker & Docker Compose
-🪟 Windows Server VM	📦 Portainer
-💻 Windows 11 VM	🏠 Self-hosted applications
-Virtualisation and infrastructure testing	Headless server managed remotely
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🖥️ Dell OptiPlex</h3>
+      <p><strong>Main virtualisation server</strong></p>
+      <ul>
+        <li>⚙️ Proxmox VE</li>
+        <li>🐧 Ubuntu Server VM</li>
+        <li>🪟 Windows Server VM</li>
+        <li>💻 Windows 11 VM</li>
+      </ul>
+      <p><em>Virtualisation and infrastructure testing.</em></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>💻 Acer Aspire</h3>
+      <p><strong>Original Linux server</strong></p>
+      <ul>
+        <li>🐧 Lubuntu</li>
+        <li>🐳 Docker &amp; Docker Compose</li>
+        <li>📦 Portainer</li>
+        <li>🏠 Self-hosted applications</li>
+      </ul>
+      <p><em>Headless server managed remotely.</em></p>
+    </td>
+  </tr>
+</table>
 
 ⸻
 
@@ -58,7 +77,7 @@ The Dell OptiPlex is the main virtualisation machine in my homelab.
 
 Running Proxmox VE allows me to host multiple operating systems on one physical machine, giving me separate environments to practise administration, test configurations and troubleshoot problems.
 
-Virtual machines
+Virtual Machines
 
 Virtual Machine	Purpose
 🐧 Ubuntu Server	Linux administration, server services and infrastructure practice
@@ -77,7 +96,7 @@ An old laptop, a few hardware upgrades and a Linux installation turned the Acer 
 
 I manage it remotely using SSH and use Tailscale to connect to devices across my setup.
 
-Hardware and operating system
+Hardware & Operating System
 
 Component	Specification
 Model	Acer Aspire ES1-531-C8DA
@@ -162,6 +181,8 @@ The homelab is always evolving. Here’s what I’m looking to work on next:
 This repository is where I document my setup, the services I run and the things I learn along the way.
 
 As the homelab grows, I’ll add more configuration examples, troubleshooting notes and practical documentation.
+
+⸻
 
 <div align="center">
 
