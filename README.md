@@ -8,9 +8,9 @@ I use my homelab to experiment with different technologies, get hands-on with in
 
 My current setup consists of two main physical machines, each serving a different purpose.
 
-Machine	Role	Operating System / Platform
-Dell OptiPlex	Main virtualisation server	Proxmox VE
-Acer Aspire ES1-531-C8DA	Original Linux server and self-hosting	Lubuntu
+### Machine	Role	Operating System / Platform
+### Dell OptiPlex	Main virtualisation server	Proxmox VE
+### Acer Aspire ES1-531-C8DA	Original Linux server and self-hosting	Lubuntu
 
 ## 🖥️ Dell OptiPlex — Main Proxmox Server
 
