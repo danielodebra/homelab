@@ -10,7 +10,7 @@ A small collection of hardware, virtual machines and self-hosted services that I
 
 ⸻
 
-👋 About the Project
+## 👋 About the Project
 
 My homelab started with an old Acer Aspire laptop that I brought back to life and turned into a Linux server.
 
@@ -22,7 +22,7 @@ The idea is simple: build it, run it, break it, fix it, and learn something alon
 
 ⸻
 
-🏗️ Infrastructure at a Glance
+## 🏗️ Infrastructure at a Glance
 
 <table>
 <tr>
@@ -57,35 +57,10 @@ Repurposed laptop running headlessly, managed remotely over SSH.
 </tr>
 </table>
 
-⸻
-
-🗺️ How Everything Fits Together
-
-flowchart TB
-    H["🖥️ HOMELAB"]
-    H --> D["Dell OptiPlex"]
-    H --> A["Acer Aspire"]
-    D --> P["Proxmox VE"]
-    A --> L["Lubuntu"]
-    P --> U["Ubuntu Server"]
-    P --> W["Windows Server"]
-    P --> W11["Windows 11"]
-    L --> DS["Docker Services"]
-    DS --> S["Self-Hosted Apps"]
-    style H fill:#24292f,color:#ffffff,stroke:#24292f
-    style D fill:#dbeafe,color:#1e3a8a,stroke:#60a5fa
-    style A fill:#dbeafe,color:#1e3a8a,stroke:#60a5fa
-    style P fill:#dcfce7,color:#166534,stroke:#4ade80
-    style L fill:#dcfce7,color:#166534,stroke:#4ade80
-    style U fill:#f3f4f6,color:#111827,stroke:#9ca3af
-    style W fill:#f3f4f6,color:#111827,stroke:#9ca3af
-    style W11 fill:#f3f4f6,color:#111827,stroke:#9ca3af
-    style DS fill:#fef3c7,color:#92400e,stroke:#fbbf24
-    style S fill:#fef3c7,color:#92400e,stroke:#fbbf24
 
 ⸻
 
-🖥️ 01 — Dell OptiPlex
+## 🖥️ 01 — Dell OptiPlex
 
 The virtualisation box
 
@@ -102,7 +77,7 @@ Proxmox VE · Linux · Windows Server · Virtual Machines · Networking
 
 ⸻
 
-💻 02 — Acer Aspire
+## 💻 02 — Acer Aspire
 
 The original homelab
 
@@ -133,7 +108,7 @@ Under the hood: Docker, Docker Compose, SSH and Tailscale.
 
 ⸻
 
-💾 03 — Storage & Media
+## 💾 03 — Storage & Media
 
 Storage
 
@@ -188,7 +163,7 @@ The homelab is always evolving. Here’s what’s on my radar:
 
 ⸻
 
-📚 Documentation
+## 📚 Documentation
 
 This repository is where I document the setup, the services I run, and the things I learn along the way.
 
