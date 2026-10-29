@@ -1,12 +1,10 @@
- 
-
 # Homelab — Infrastructure, Virtualisation & Self-Hosting
 
 A personal homelab project focused on building practical experience in Linux administration, virtualisation, containerisation, networking, infrastructure management and DevOps.
 
 What started as a repurposed laptop running Linux and a collection of self-hosted applications has evolved into a two-machine infrastructure environment, combining Proxmox VE, Ubuntu Server, Docker, centralised management and automated deployments.
 
-The goal is to use this environment to develop practical engineering skills by building, managing, troubleshooting and continuously improving real infrastructure.
+The goal is to develop practical engineering skills by building, managing, troubleshooting and continuously improving real infrastructure.
 
 ---
 
@@ -14,7 +12,7 @@ The goal is to use this environment to develop practical engineering skills by b
 
 The homelab consists of two physical machines operating across a local network.
 
-- **Acer Aspire:** Lubuntu-based Linux server running Docker and core self-hosted services.
+- **Acer Aspire:** Lubuntu-based Linux server running Docker and self-hosted services.
 - **Dell OptiPlex:** Proxmox VE host running multiple virtual machines, including an Ubuntu Server VM hosting Docker workloads.
 
 Portainer provides centralised management of both Docker environments, while Homepage and Uptime Kuma provide service access and availability monitoring.
@@ -27,7 +25,7 @@ Portainer provides centralised management of both Docker environments, while Hom
 
 The environment runs across two repurposed physical machines.
 
-![Homelab physical hardware](docs/images/homelab-hardware.jpg)
+![Homelab physical hardware](docs/images/homelab-hardware.jpeg)
 
 | Machine | Operating System / Platform | Purpose |
 |---|---|---|
@@ -96,7 +94,13 @@ Connected environments:
 | `local` | Acer Aspire | Local Docker socket |
 | `Dell-tempa-core` | Dell Ubuntu Server | Portainer Agent |
 
-![Portainer showing both Docker environments](docs/images/portainer-environments.png)
+### Acer Aspire
+
+![Portainer showing the Acer Aspire Docker environment](docs/images/acer-portainer-environments.png)
+
+### Dell Ubuntu Server
+
+![Portainer showing the Dell Ubuntu Server Docker environment](docs/images/dell-portainer-environments.png)
 
 The Portainer Agent allows the central Portainer installation to communicate with the Docker Engine running on the Dell Ubuntu Server.
 
@@ -144,11 +148,22 @@ Private IP addresses, device identifiers and sensitive network configuration are
 
 ## 8. Storage and Media Infrastructure
 
-A Seagate IronWolf 4TB hard drive is used for additional media and application storage.
+A Seagate IronWolf 4TB hard drive provides additional storage for media and homelab data.
 
-The drive is connected to the Dell OptiPlex through an ORICO USB 3.0 enclosure and mounted on the Proxmox host.
+The drive is connected to the Dell OptiPlex through an ORICO USB 3.0 enclosure and formatted with the EXT4 filesystem.
 
-The storage is shared with the Ubuntu Server VM through NFS.
+It is mounted on the Proxmox host and shared with the Ubuntu Server VM through Network File System (NFS).
+
+### Storage Configuration
+
+| Component | Details |
+|---|---|
+| Storage drive | Seagate IronWolf 4TB |
+| Enclosure | ORICO 3588US3 USB 3.0 |
+| Filesystem | EXT4 |
+| Proxmox mount point | `/mnt/storage` |
+| Sharing protocol | NFS |
+| Connected virtual machine | Ubuntu Server (`tempa-core`) |
 
 ### Media Services
 
@@ -157,11 +172,14 @@ The storage is shared with the Ubuntu Server VM through NFS.
 | Plex | Media streaming |
 | Jellyfin | Self-hosted media streaming |
 
+### Engineering Experience
+
 This setup has provided practical experience with:
 
 - Linux disk management.
+- EXT4 filesystem administration.
 - Filesystem mounting and persistence.
-- `/etc/fstab` configuration.
+- Persistent mount configuration.
 - NFS exports and client mounts.
 - Docker volume and bind-mount configuration.
 - Storage troubleshooting and recovery.
@@ -188,6 +206,7 @@ Some of the areas I've worked on include:
 | Deployment reliability | Implementing automatic rollback in a CI/CD workflow |
 | Networking | SSH, NFS, local networking and Tailscale |
 | Monitoring | Service availability monitoring with Uptime Kuma |
+| Storage | Managing external storage, EXT4 and NFS |
 | Troubleshooting | Investigating Docker, storage, connectivity and service availability issues |
 
 ### CI/CD Project
@@ -235,10 +254,3 @@ It is an opportunity to understand how infrastructure is designed, configured, d
 Every new service, automation workflow and troubleshooting exercise provides an opportunity to develop practical engineering experience.
 
 **Build. Automate. Monitor. Troubleshoot. Improve.**
-
-
-
-<div align="center">
-
- 
-</div>
