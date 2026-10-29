@@ -2,9 +2,9 @@
 
 # 🖥️ My Homelab
 
-Linux · Virtualisation · Self-Hosting · Infrastructure
+**Linux · Virtualisation · Self-Hosting · Infrastructure**
 
-A small collection of hardware, virtual machines and self-hosted services that I’m building, maintaining and experimenting with at home.
+A personal homelab built around Proxmox VE and a repurposed Linux server, providing hands-on experience with virtualisation, Linux and Windows administration, Docker, networking and self-hosted applications.
 
 </div>
 
@@ -57,121 +57,129 @@ The idea is simple: Build it, run it, break it, fix it, and learn something alon
 
 ## 🖥️ Dell OptiPlex
 
-Main Virtualisation Server
+**Role:** Main virtualisation server
 
 The Dell OptiPlex is the main virtualisation machine in my homelab.
 
-Running Proxmox VE allows me to host multiple operating systems on one physical machine, giving me separate environments to practise administration, test configurations and troubleshoot problems.
+Running Proxmox VE allows me to host multiple operating systems on one physical machine, providing separate environments for administration, testing and troubleshooting.
 
-Virtual Machines
+### Virtual Machines
 
-Virtual Machine	Purpose
-🐧 Ubuntu Server	Linux administration, server services and infrastructure practice
-🪟 Windows Server	Windows infrastructure and server administration
-💻 Windows 11	Client operating system testing and troubleshooting
+| Virtual Machine | Purpose |
+|---|---|
+| Ubuntu Server | Linux administration, server services and infrastructure practice |
+| Windows Server | Windows infrastructure and server administration |
+| Windows 11 | Client operating system testing and troubleshooting |
 
-Technologies: Proxmox VE · Linux · Windows Server · Virtual Machines · Networking
-
+**Technologies:** Proxmox VE · Linux · Windows Server · Virtualisation · Networking
 ⸻
 
 ## 💻 Acer Aspire
 
-The Original Homelab
+**Role:** Headless Linux server
 
 An old laptop, a few hardware upgrades and a Linux installation turned the Acer Aspire into a headless server.
 
 I manage it remotely using SSH and use Tailscale to connect to devices across my setup.
 
-Hardware & Operating System
+### Hardware & Operating System
 
-Component	Specification
-Model	Acer Aspire ES1-531-C8DA
-CPU	Intel Celeron N3050
-Memory	8GB RAM
-Storage	Kingston 240GB SSD
-Operating system	Lubuntu
+| Component | Specification |
+|---|---|
+| Model | Acer Aspire ES1-531-C8DA |
+| CPU | Intel Celeron N3050 |
+| Memory | 8GB RAM |
+| Storage | Kingston 240GB SSD |
+| Operating system | Lubuntu |
+| Remote access | SSH and Tailscale |
 
-🐳 Docker & Self-Hosted Applications
+### 🐳 Docker & Self-Hosted Applications
 
 Docker and Docker Compose provide a way to run and manage applications as containers.
 
-Application	Purpose
-Portainer	Docker container management
-Uptime Kuma	Service uptime monitoring
-Immich	Photo and video management
-Nextcloud	Personal cloud and file synchronisation
-Navidrome	Self-hosted music streaming
-EmulatorJS	Browser-based game emulation
+| Application | Purpose |
+|---|---|
+| Portainer | Docker container management |
+| Uptime Kuma | Service uptime monitoring |
+| Immich | Photo and video management |
+| Nextcloud | Personal cloud and file synchronisation |
+| Navidrome | Self-hosted music streaming |
+| EmulatorJS | Browser-based game emulation |
 
-Under the hood: Docker · Docker Compose · SSH · Tailscale
-
+**Technologies:** Lubuntu · Docker · Docker Compose · SSH · Tailscale
+ 
 ⸻
 
-## 💾 Storage & Media
+ ## 💾 Storage & Media
 
-Storage
+The homelab uses additional HDD storage for media and other files, with NFS providing network file sharing.
 
-4TB Seagate IronWolf HDD
+### Storage
 
-Additional storage for my homelab, with NFS used for network file sharing.
+| Component | Details |
+|---|---|
+| Drive | Seagate IronWolf |
+| Capacity | 4TB |
+| Filesystem | ext4 |
+| Mount point | `/mnt/storage` |
+| Network sharing | NFS |
 
-Component	Details
-Drive	Seagate IronWolf
-Capacity	4TB
-Network sharing	NFS
-Mount point	/mnt/storage
+### 🎬 Media Servers
 
-🎬 Media Servers
+| Service | Purpose |
+|---|---|
+| Plex | Organising and streaming personal media |
+| Jellyfin | Open-source media management and streaming |
 
-Service	Purpose
-Plex	Organising and streaming personal media
-Jellyfin	Open-source media management and streaming
-
-This part of the setup gives me practical experience with storage, filesystem mounts, network shares and self-hosted media services.
+This part of the setup provides practical experience with Linux filesystems, storage mounts, network shares and self-hosted media services. 
 
 ⸻
 
 ## 🧰 The Toolkit
 
-A quick overview of the technologies across my homelab.
-
-Category	Tools & Technologies
-Virtualisation	Proxmox VE
-Operating systems	Ubuntu Server, Lubuntu, Windows Server, Windows 11
-Containers	Docker, Docker Compose, Portainer
-Networking	Tailscale, SSH, NFS
-Storage	Seagate IronWolf 4TB HDD, network file sharing
-Monitoring	Uptime Kuma
-Media	Plex, Jellyfin, Navidrome
-Self-hosting	Immich, Nextcloud, EmulatorJS
-Hardware	RAM and SSD upgrades, hardware troubleshooting
+| Category | Tools & Technologies |
+|---|---|
+| Virtualisation | Proxmox VE |
+| Operating systems | Ubuntu Server, Lubuntu, Windows Server, Windows 11 |
+| Containers | Docker, Docker Compose, Portainer |
+| Networking | Tailscale, SSH, NFS |
+| Storage | Seagate IronWolf 4TB HDD, ext4, NFS |
+| Monitoring | Uptime Kuma |
+| Media | Plex, Jellyfin, Navidrome |
+| Self-hosting | Immich, Nextcloud, EmulatorJS |
+| Hardware | RAM and SSD upgrades, hardware troubleshooting |
 
 ⸻
 
-## 🔧 What’s Next?
 
-The homelab is always evolving. Here’s what I’m looking to work on next:
+## 🔧 What's Next?
 
-* Expand my Windows Server lab.
-* Practise Linux administration and automation.
-* Improve backup and recovery procedures.
-* Explore virtual networking and storage.
-* Improve service monitoring and reliability.
-* Document troubleshooting scenarios.
-* Experiment with infrastructure automation.
+The homelab is always evolving. Here are some areas I'm looking to work on next:
+
+- [ ] Expand my Windows Server lab.
+- [ ] Practise Linux administration and automation.
+- [ ] Improve backup and recovery procedures.
+- [ ] Explore virtual networking and storage.
+- [ ] Improve service monitoring and reliability.
+- [ ] Document troubleshooting scenarios.
+- [ ] Experiment with infrastructure automation.
 
 ⸻
 
 ## 📚 Documentation
 
-This repository is where I document my setup, the services I run and the things I learn along the way.
+This repository documents my homelab infrastructure, self-hosted applications and the lessons learned while maintaining the setup.
 
-As the homelab grows, I’ll add more configuration examples, troubleshooting notes and practical documentation.
+Planned documentation includes:
+
+- Architecture and infrastructure overview.
+- Hardware specifications.
+- Storage and NFS configuration.
+- Troubleshooting and recovery procedures.
 
 ⸻
 
 <div align="center">
 
-Built at home. Learned by doing. Always a work in progress. 🛠️
-
+ 
 </div>
