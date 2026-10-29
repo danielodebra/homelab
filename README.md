@@ -73,6 +73,8 @@ Running Proxmox VE allows me to host multiple operating systems on one physical 
 **Technologies:** Proxmox VE · Linux · Windows Server · Virtualisation · Networking
 
 
+
+
 ## 💻 Acer Aspire
 
 **Role:** Headless Linux server
