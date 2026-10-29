@@ -8,7 +8,6 @@ A personal homelab built around Proxmox VE and a repurposed Linux server, provid
 
 </div>
 
-⸻
 
 ## 👋 About the Project
 
@@ -20,7 +19,7 @@ I use it to experiment with technology, troubleshoot problems and learn by build
 
 The idea is simple: Build it, run it, break it, fix it, and learn something along the way.
 
-⸻
+
 
 ## 🏗️ Infrastructure at a Glance
 
@@ -53,7 +52,7 @@ The idea is simple: Build it, run it, break it, fix it, and learn something alon
 
  
  
-⸻
+
 
 ## 🖥️ Dell OptiPlex
 
@@ -72,7 +71,7 @@ Running Proxmox VE allows me to host multiple operating systems on one physical 
 | Windows 11 | Client operating system testing and troubleshooting |
 
 **Technologies:** Proxmox VE · Linux · Windows Server · Virtualisation · Networking
-⸻
+
 
 ## 💻 Acer Aspire
 
@@ -108,7 +107,7 @@ Docker and Docker Compose provide a way to run and manage applications as contai
 
 **Technologies:** Lubuntu · Docker · Docker Compose · SSH · Tailscale
  
-⸻
+
 
  ## 💾 Storage & Media
 
@@ -133,7 +132,7 @@ The homelab uses additional HDD storage for media and other files, with NFS prov
 
 This part of the setup provides practical experience with Linux filesystems, storage mounts, network shares and self-hosted media services. 
 
-⸻
+
 
 ## 🧰 The Toolkit
 
@@ -149,7 +148,7 @@ This part of the setup provides practical experience with Linux filesystems, sto
 | Self-hosting | Immich, Nextcloud, EmulatorJS |
 | Hardware | RAM and SSD upgrades, hardware troubleshooting |
 
-⸻
+
 
 
 ## 🔧 What's Next?
@@ -164,7 +163,7 @@ The homelab is always evolving. Here are some areas I'm looking to work on next:
 - [ ] Document troubleshooting scenarios.
 - [ ] Experiment with infrastructure automation.
 
-⸻
+
 
 ## 📚 Documentation
 
@@ -177,7 +176,7 @@ Planned documentation includes:
 - Storage and NFS configuration.
 - Troubleshooting and recovery procedures.
 
-⸻
+
 
 <div align="center">
 
