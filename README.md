@@ -1,182 +1,240 @@
  <div align="center">
 
-# 🖥️ My Homelab
+# Homelab — Infrastructure, Virtualisation & Self-Hosting
 
-**Linux · Virtualisation · Self-Hosting · Infrastructure**
+A personal homelab project focused on building practical experience in Linux administration, virtualisation, containerisation, networking, infrastructure management and DevOps.
 
-A personal homelab built around Proxmox VE and a repurposed Linux server, providing hands-on experience with virtualisation, Linux and Windows administration, Docker, networking and self-hosted applications.
+What started as a repurposed laptop running Linux and a collection of self-hosted applications has evolved into a two-machine infrastructure environment, combining Proxmox VE, Ubuntu Server, Docker, centralised management and automated deployments.
 
-</div>
+The goal is to use this environment to develop practical engineering skills by building, managing, troubleshooting and continuously improving real infrastructure.
 
+---
 
-## 👋 About the Project
+## 1. Infrastructure Architecture
 
-My homelab started with an old Acer Aspire laptop that I brought back to life and turned into a Linux server.
+The homelab consists of two physical machines operating across a local network.
 
-Since then, I’ve added a Dell OptiPlex running Proxmox VE, Windows and Linux virtual machines, additional storage, and a collection of self-hosted applications.
+- **Acer Aspire:** Lubuntu-based Linux server running Docker and core self-hosted services.
+- **Dell OptiPlex:** Proxmox VE host running multiple virtual machines, including an Ubuntu Server VM hosting Docker workloads.
 
-I use it to experiment with technology, troubleshoot problems and learn by building things myself.
+Portainer provides centralised management of both Docker environments, while Homepage and Uptime Kuma provide service access and availability monitoring.
 
-The idea is simple: Build it, run it, break it, fix it, and learn something along the way.
+![Homelab infrastructure architecture](docs/images/homelab-architecture.png)
 
+---
 
+## 2. Physical Infrastructure
 
-## 🏗️ Infrastructure at a Glance
+The environment runs across two repurposed physical machines.
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🖥️ Dell OptiPlex</h3>
-      <p><strong>Main virtualisation server</strong></p>
-      <ul>
-        <li>⚙️ Proxmox VE</li>
-        <li>🐧 Ubuntu Server VM</li>
-        <li>🪟 Windows Server VM</li>
-        <li>💻 Windows 11 VM</li>
-      </ul>
-      <p><em>Virtualisation and infrastructure testing.</em></p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>💻 Acer Aspire</h3>
-      <p><strong>Original Linux server</strong></p>
-      <ul>
-        <li>🐧 Lubuntu</li>
-        <li>🐳 Docker &amp; Docker Compose</li>
-        <li>📦 Portainer</li>
-        <li>🏠 Self-hosted applications</li>
-      </ul>
-      <p><em>Headless server managed remotely.</em></p>
-    </td>
-  </tr>
-</table>
+![Homelab physical hardware](docs/images/homelab-hardware.jpg)
 
- 
- 
+| Machine | Operating System / Platform | Purpose |
+|---|---|---|
+| Acer Aspire | Lubuntu | Linux server and Docker host |
+| Dell OptiPlex | Proxmox VE | Virtualisation host |
 
+The two machines provide separate environments for self-hosted applications, virtualisation, media services and infrastructure management.
 
-## 🖥️ Dell OptiPlex
+---
 
-**Role:** Main virtualisation server
+## 3. Virtualisation — Proxmox VE
 
-The Dell OptiPlex is the main virtualisation machine in my homelab.
+The Dell OptiPlex runs Proxmox Virtual Environment (VE), providing a platform for managing virtual machines.
 
-Running Proxmox VE allows me to host multiple operating systems on one physical machine, providing separate environments for administration, testing and troubleshooting.
+Current virtual machines:
 
-### Virtual Machines
+| Virtual Machine | Operating System | Purpose |
+|---|---|---|
+| Ubuntu Server (`tempa-core`) | Ubuntu Server | Docker workloads and application hosting |
+| Windows Server | Windows Server | Windows server administration and lab environment |
+| Windows 11 | Windows 11 | Windows client testing and administration |
 
-| Virtual Machine | Purpose |
-|---|---|
-| Ubuntu Server | Linux administration, server services and infrastructure practice |
-| Windows Server | Windows infrastructure and server administration |
-| Windows 11 | Client operating system testing and troubleshooting |
+![Proxmox virtualisation dashboard](docs/images/proxmox-dashboard.png)
 
-**Technologies:** Proxmox VE · Linux · Windows Server · Virtualisation · Networking
+This environment provides practical experience with virtualisation, VM management, Linux and Windows administration.
 
+---
 
+## 4. Docker Services
 
+Docker is used to deploy and manage containerised applications across both physical machines.
 
-## 💻 Acer Aspire
-
-**Role:** Headless Linux server
-
-An old laptop, a few hardware upgrades and a Linux installation turned the Acer Aspire into a headless server.
-
-I manage it remotely using SSH and use Tailscale to connect to devices across my setup.
-
-### Hardware & Operating System
-
-| Component | Specification |
-|---|---|
-| Model | Acer Aspire ES1-531-C8DA |
-| CPU | Intel Celeron N3050 |
-| Memory | 8GB RAM |
-| Storage | Kingston 240GB SSD |
-| Operating system | Lubuntu |
-| Remote access | SSH and Tailscale |
-
-### 🐳 Docker & Self-Hosted Applications
-
-Docker and Docker Compose provide a way to run and manage applications as containers.
-
-| Application | Purpose |
-|---|---|
-| Portainer | Docker container management |
-| Uptime Kuma | Service uptime monitoring |
-| Immich | Photo and video management |
-| Nextcloud | Personal cloud and file synchronisation |
-| Navidrome | Self-hosted music streaming |
-| EmulatorJS | Browser-based game emulation |
-
-**Technologies:** Lubuntu · Docker · Docker Compose · SSH · Tailscale
- 
-
-
- ## 💾 Storage & Media
-
-The homelab uses additional HDD storage for media and other files, with NFS providing network file sharing.
-
-### Storage
-
-| Component | Details |
-|---|---|
-| Drive | Seagate IronWolf |
-| Capacity | 4TB |
-| Filesystem | ext4 |
-| Mount point | `/mnt/storage` |
-| Network sharing | NFS |
-
-### 🎬 Media Servers
+### Acer Aspire — Docker Host
 
 | Service | Purpose |
 |---|---|
-| Plex | Organising and streaming personal media |
-| Jellyfin | Open-source media management and streaming |
+| Homepage | Centralised service dashboard |
+| Portainer | Docker management |
+| Uptime Kuma | Service availability monitoring |
+| Immich | Self-hosted photo and video management |
+| Nextcloud | Personal cloud storage and collaboration |
+| Navidrome | Self-hosted music streaming |
+| EmulatorJS | Browser-based retro gaming |
 
-This part of the setup provides practical experience with Linux filesystems, storage mounts, network shares and self-hosted media services. 
+### Dell Ubuntu Server — Docker Host
 
-
-
-## 🧰 The Toolkit
-
-| Category | Tools & Technologies |
+| Service | Purpose |
 |---|---|
-| Virtualisation | Proxmox VE |
-| Operating systems | Ubuntu Server, Lubuntu, Windows Server, Windows 11 |
-| Containers | Docker, Docker Compose, Portainer |
-| Networking | Tailscale, SSH, NFS |
-| Storage | Seagate IronWolf 4TB HDD, ext4, NFS |
-| Monitoring | Uptime Kuma |
-| Media | Plex, Jellyfin, Navidrome |
-| Self-hosting | Immich, Nextcloud, EmulatorJS |
-| Hardware | RAM and SSD upgrades, hardware troubleshooting |
+| Plex | Media streaming |
+| Jellyfin | Self-hosted media streaming |
+| Homelab Status | Custom homelab status application |
+| Portainer Agent | Remote Docker environment management |
 
+Applications are deployed using Docker, with container configuration and management handled across the two Docker hosts.
 
+---
 
+## 5. Centralised Container Management — Portainer
 
-## 🔧 What's Next?
+Portainer provides centralised management of both Docker environments from a single dashboard running on the Acer Aspire.
 
-The homelab is always evolving. Here are some areas I'm looking to work on next:
+Connected environments:
 
-- [ ] Expand my Windows Server lab.
-- [ ] Practise Linux administration and automation.
-- [ ] Improve backup and recovery procedures.
-- [ ] Explore virtual networking and storage.
-- [ ] Improve service monitoring and reliability.
-- [ ] Document troubleshooting scenarios.
-- [ ] Experiment with infrastructure automation.
+| Environment | Host | Connection |
+|---|---|---|
+| `local` | Acer Aspire | Local Docker socket |
+| `Dell-tempa-core` | Dell Ubuntu Server | Portainer Agent |
 
+![Portainer showing both Docker environments](docs/images/portainer-environments.png)
 
+The Portainer Agent allows the central Portainer installation to communicate with the Docker Engine running on the Dell Ubuntu Server.
 
-## 📚 Documentation
+This provides a single management interface for monitoring and managing containers across both machines.
 
-This repository documents my homelab infrastructure, self-hosted applications and the lessons learned while maintaining the setup.
+---
 
-Planned documentation includes:
+## 6. Monitoring and Service Management
 
-- Architecture and infrastructure overview.
-- Hardware specifications.
-- Storage and NFS configuration.
-- Troubleshooting and recovery procedures.
+Two applications provide visibility and management of the homelab.
+
+### Homepage
+
+Homepage provides a central dashboard for accessing applications and infrastructure services hosted across both machines.
+
+![Homepage service dashboard](docs/images/homepage-dashboard.png)
+
+### Uptime Kuma
+
+Uptime Kuma monitors the availability of services across the homelab.
+
+It provides visibility into service health, response times and availability.
+
+Monitoring is being expanded to cover services hosted on both the Acer Aspire and Dell Ubuntu Server.
+
+---
+
+## 7. Networking and Remote Access
+
+The homelab operates across a local network, with Tailscale providing secure remote connectivity between devices.
+
+Technologies and concepts used:
+
+- Local network addressing and connectivity.
+- SSH for remote Linux administration.
+- Tailscale for remote access.
+- NFS for network file sharing between the Proxmox host and Ubuntu Server VM.
+- Docker networking and service ports.
+
+Remote connectivity is used to administer infrastructure without requiring direct physical access to the machines.
+
+Private IP addresses, device identifiers and sensitive network configuration are intentionally excluded from this public documentation.
+
+---
+
+## 8. Storage and Media Infrastructure
+
+A Seagate IronWolf 4TB hard drive is used for additional media and application storage.
+
+The drive is connected to the Dell OptiPlex through an ORICO USB 3.0 enclosure and mounted on the Proxmox host.
+
+The storage is shared with the Ubuntu Server VM through NFS.
+
+### Media Services
+
+| Service | Purpose |
+|---|---|
+| Plex | Media streaming |
+| Jellyfin | Self-hosted media streaming |
+
+This setup has provided practical experience with:
+
+- Linux disk management.
+- Filesystem mounting and persistence.
+- `/etc/fstab` configuration.
+- NFS exports and client mounts.
+- Docker volume and bind-mount configuration.
+- Storage troubleshooting and recovery.
+
+Storage reliability and automated backups remain areas for improvement.
+
+---
+
+## 9. Engineering Experience and Projects
+
+This homelab is an ongoing practical engineering project.
+
+Some of the areas I've worked on include:
+
+| Area | Practical Experience |
+|---|---|
+| Linux administration | Managing Lubuntu and Ubuntu Server |
+| Virtualisation | Installing and managing Proxmox VE and virtual machines |
+| Containerisation | Deploying and managing Docker containers |
+| Container management | Connecting and managing two Docker environments through Portainer |
+| CI/CD | Building GitHub Actions workflows |
+| Container registry | Building and publishing Docker images to GitHub Container Registry |
+| Automated deployment | Deploying applications to Ubuntu Server |
+| Deployment reliability | Implementing automatic rollback in a CI/CD workflow |
+| Networking | SSH, NFS, local networking and Tailscale |
+| Monitoring | Service availability monitoring with Uptime Kuma |
+| Troubleshooting | Investigating Docker, storage, connectivity and service availability issues |
+
+### CI/CD Project
+
+A separate project demonstrates an automated deployment pipeline using GitHub Actions.
+
+The workflow includes:
+
+- Automated testing.
+- Docker image building.
+- Publishing images to GitHub Container Registry.
+- Deployment to the Dell Ubuntu Server.
+- Deployment health checks and automatic rollback.
+
+Repository: [devops-cicd-project](https://github.com/danielodebra/devops-cicd-project)
+
+---
+
+## 10. Future Improvements and Engineering Roadmap
+
+The homelab is actively being developed as a learning environment for broader DevOps and Cloud Engineering skills.
+
+Planned improvements include:
+
+| Status | Project | Objective |
+|---|---|---|
+| Planned | Ansible | Automate Linux server configuration and application deployment |
+| Planned | Prometheus | Collect infrastructure and system metrics |
+| Planned | Grafana | Build infrastructure monitoring dashboards |
+| Planned | Automated backups | Implement scheduled backups and tested restoration |
+| Planned | CI/CD improvements | Introduce additional testing and security scanning |
+| Planned | Terraform | Provision and manage cloud infrastructure using Infrastructure as Code |
+| Planned | Kubernetes | Explore container orchestration when there is a practical use case |
+
+These projects will be introduced incrementally, documented and added to the repository as they are implemented.
+
+---
+
+## 11. Project Philosophy
+
+The purpose of this homelab is not simply to run self-hosted applications.
+
+It is an opportunity to understand how infrastructure is designed, configured, deployed, monitored, secured and maintained.
+
+Every new service, automation workflow and troubleshooting exercise provides an opportunity to develop practical engineering experience.
+
+**Build. Automate. Monitor. Troubleshoot. Improve.**
 
 
 
